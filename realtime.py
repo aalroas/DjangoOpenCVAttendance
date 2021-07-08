@@ -123,7 +123,7 @@ def show_prediction_labels_on_image(frame, predictions , course_name, course_id,
                  draw.rectangle(((left, top), (right, bottom)), outline=(0, 0, 0))
                  text_width, text_height = draw.textsize(name)
                  draw.rectangle(((left, bottom - text_height - 10), (right, bottom)), fill=(0, 255, 0), outline=(0, 255, 0))
-                 display_text =  "Student :" + student_no + "Course Name :" + course_name + "\n We Have got your attendance  iyi dersler"
+                 display_text =  "ID:" + student_no + "Course:" + course_name + "iyi Dersler"
                  draw.text((left + 6, bottom - text_height - 15), display_text, fill=(0, 0, 0))
                  #veri tabanına yazılıyor.
                  sqlite_insert_query = """INSERT INTO staj_attendance (date, time, status, course_id_id, student_id_id) VALUES  (?, ?, ?, ?, ?);"""
@@ -138,8 +138,8 @@ def show_prediction_labels_on_image(frame, predictions , course_name, course_id,
                  draw.rectangle(((left, top), (right, bottom)), outline=(0, 255, 0))
                  text_width, text_height = draw.textsize(name)
                  draw.rectangle(((left, bottom - text_height - 10), (right, bottom)), fill=(0, 255, 0), outline=(0, 255, 0))
-                 display_text =  "Student :" + student_no + "Course Name :" + course_name + "\n We Have take  your attendance before so don't come back"
-                 draw.text((left + 6, bottom - text_height - 15), display_text, fill=(0, 0, 0))
+                 display_text =  "ID :" + student_no + "Course:" + course_name + "its done"
+                 draw.text((left + 6, bottom - text_height - 10), display_text, fill=(0, 0, 0))
             
     del draw
     opencvimage = np.array(pil_image)
